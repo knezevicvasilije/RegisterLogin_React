@@ -1,7 +1,11 @@
+import useForm from "./useForm";
+
 const FormSignUp = () => {
+  const { handleChange, values, handleSubmit } = useForm();
+
   return (
     <div className="form-content-right">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
@@ -16,6 +20,8 @@ const FormSignUp = () => {
             className="form-input"
             name="username"
             placeholder="Enter ur username"
+            value={values.username}
+            onChange={handleChange}
           />
         </div>
 
@@ -25,10 +31,12 @@ const FormSignUp = () => {
           </label>
           <input
             id="email"
-            type="text"
+            type="email"
             className="form-input"
             name="email"
             placeholder="Enter ur email"
+            value={values.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -38,10 +46,12 @@ const FormSignUp = () => {
           </label>
           <input
             id="password"
-            type="text"
+            type="password"
             className="form-input"
             name="password"
             placeholder="Enter ur password"
+            value={values.password}
+            onChange={handleChange}
           />
         </div>
 
@@ -50,11 +60,13 @@ const FormSignUp = () => {
             Confirm Password:
           </label>
           <input
-            id="passowrd2"
-            type="text"
+            id="password2"
+            type="password"
             className="form-input"
-            name="passowrd2"
-            placeholder="Enter ur passowrd2"
+            name="password2"
+            placeholder="Enter ur password2"
+            value={values.password2}
+            onChange={handleChange}
           />
         </div>
 
