@@ -71,7 +71,7 @@ const FormSignUp = ({ submitForm }) => {
             type="password"
             className="form-input"
             name="password2"
-            placeholder="Enter ur password2"
+            placeholder="Confirm ur password"
             value={values.password2}
             onChange={handleChange}
           />
