@@ -1,7 +1,8 @@
 import useForm from "./useForm";
+import validate from "./validateInfo";
 
 const FormSignUp = () => {
-  const { handleChange, values, handleSubmit } = useForm();
+  const { handleChange, values, handleSubmit, errors } = useForm(validate);
 
   return (
     <div className="form-content-right">
@@ -24,7 +25,7 @@ const FormSignUp = () => {
             onChange={handleChange}
           />
         </div>
-
+        {errors.username && <p>{errors.username}</p>}
         <div className="form-inputs">
           <label className="form-label" htmlFor="email">
             E-mail:
